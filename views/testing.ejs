@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/testing.css">
+    <title>Тестування дронів</title>
+    <style>
+        .correct { color: green; }
+        .incorrect { color: red; }
+        .back-button { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Пройдіть тест про FPV дрони</h1>
+    <img src="/photos/testing.jpg" alt="Testing image" style="width: 30%; height: auto;">
+   <div style="bottom: 30px;"> 
+    <div class="name">
+    <label for="username">Ваше ім'я:</label><br>
+    <input type="text" id="username" name="username" placeholder="Введіть ваше ім'я">
+</div>
+    <form id="test-form">
+        <label for="question1">1. Що таке KV?</label><br>
+        <select id="question1" name="question1">
+            <option value=""></option>
+            <option value="KV - це швидкість польоту дрона">KV - це швидкість польоту дрона</option>
+            <option value="KV - це число обертів мотору на вольт без навантаження">KV - це число обертів мотору на вольт без навантаження</option>
+            <option value="KV - це модульна частина відеокамери у дроні">KV - це модульна частина відеокамери у дроні</option>
+        </select>
+        <span id="result1"></span><br><br>
+
+        <label for="question2">2. Які антени є в дроні?</label><br>
+        <select id="question2" name="question2">
+             <option value=""></option>
+            <option value="Антени в дроні можуть бути гострі або тупі">Антени в дроні можуть бути гострі або тупі</option>
+            <option value="Антени в дроні можуть бути всенаправлені або спрямовані">Антени в дроні можуть бути всенаправлені або спрямовані</option>
+            <option value="Антени можуть бути квадратні або круглі">Антени можуть бути квадратні або круглі</option>
+        </select>
+        <span id="result2"></span><br><br>
+
+        <label for="question3">3. Що таке стак в FPV дроні?</label><br>
+        <select id="question3" name="question3">
+             <option value=""></option>
+            <option value="Стак - це місце куди вставляють зарядні пристрої">Стак - це місце куди вставляють зарядні пристрої</option>
+            <option value="Стак - це модульна конструкція електроніки FPV дрона">Стак - це модульна конструкція електроніки FPV дрона</option>
+            <option value="Стак - це запасні деталі для FPV дрона">Стак - це запасні деталі для FPV дрона</option>
+        </select>
+        <span id="result3"></span><br><br>
+
+        <label for="question4">4. Що означає маркування мотору "2807"?</label><br>
+        <select id="question4" name="question4">
+             <option value=""></option>
+            <option value="Маркування означає рік видавництва мотору">Маркування означає рік видавництва мотору</option>
+            <option value="Маркування '2807' означає діаметр і висоту статора мотору">Маркування '2807' означає діаметр і висоту статора мотору</option>
+            <option value="Маркування означає швидкість обертання мотору">Маркування означає швидкість обертання мотору</option>
+        </select>
+        <span id="result4"></span><br><br>
+
+        <label for="question5">5. Яка роль відеопередавача?</label><br>
+        <select id="question5" name="question5">
+             <option value=""></option>
+            <option value="Відеопередавач передає відеосигнал з пульта на камеру дрона">Відеопередавач передає відеосигнал з пульта на камеру дрона</option>
+            <option value="Відеопередавач передає відеосигнал з камери дрона на пульт або окуляри пілота">Відеопередавач передає відеосигнал з камери дрона на пульт або окуляри пілота</option>
+            <option value="Відеопередавач передає звук">Відеопередавач передає звук</option>
+        </select>
+        <span id="result5"></span><br><br>
+
+
+        <button type="submit">Зберегти відповіді</button>
+    </form>
+
+    <button class="back-button" onclick="window.location.href='/'">На головну</button>
+</div>
+    <script>
+   const correctAnswers = {
+    question1: "KV - це число обертів мотору на вольт без навантаження",
+    question2: "Антени в дроні можуть бути всенаправлені або спрямовані",
+    question3: "Стак - це модульна конструкція електроніки FPV дрона",
+    question4: "Маркування '2807' означає діаметр і висоту статора мотору",
+    question5: "Відеопередавач передає відеосигнал з камери дрона на пульт або окуляри пілота"
+};
+
+// Функція для перевірки відповіді
+function checkAnswer(questionId, resultId) {
+    const userAnswer = document.getElementById(questionId).value;
+    const resultElement = document.getElementById(resultId);
+    
+    if (userAnswer === correctAnswers[questionId]) {
+        resultElement.textContent = "Правильно!";
+        resultElement.className = "correct";
+    } else if (userAnswer === "") {
+        resultElement.textContent = "";  // Очистити результат, якщо нічого не вибрано
+    } else {
+        resultElement.textContent = "Неправильно!";
+        resultElement.className = "incorrect";
+    }
+}
+
+// Додавання обробників для кожного питання
+document.getElementById('question1').addEventListener('change', function() {
+    checkAnswer('question1', 'result1');
+});
+document.getElementById('question2').addEventListener('change', function() {
+    checkAnswer('question2', 'result2');
+});
+document.getElementById('question3').addEventListener('change', function() {
+    checkAnswer('question3', 'result3');
+});
+document.getElementById('question4').addEventListener('change', function() {
+    checkAnswer('question4', 'result4');
+});
+document.getElementById('question5').addEventListener('change', function() {
+    checkAnswer('question5', 'result5');
+});
+
+// Обробка відправки форми
+document.getElementById('test-form').addEventListener('submit', function(e) {
+    e.preventDefault(); // Зупинити стандартну відправку форми
+
+    const username = document.getElementById('username').value;
+    const answers = {
+        question1: document.getElementById('question1').value,
+        question2: document.getElementById('question2').value,
+        question3: document.getElementById('question3').value,
+        question4: document.getElementById('question4').value,
+        question5: document.getElementById('question5').value
+    };
+
+    // Відправка даних на сервер
+    fetch('/submit-test', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username, ...answers })
+    })
+    .then(response => {
+        if (response.ok) {
+            // Очищення полів форми
+            this.reset();
+            document.getElementById('username').value = ''; // Очистити поле username
+            alert('Ваші відповіді були успішно збережені!');
+        } else {
+            alert('Сталася помилка при збереженні відповідей.');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});
+    </script>
+</body>
+</html>

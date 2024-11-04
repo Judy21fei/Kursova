@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #bebebe;
+    color: #333;
+    text-align: center;
+    padding: 50px;
+    height: 400px;   /* Фіксована висота сторінки */
+    margin: 0 auto;  /* Центрування сторінки по центру */
+    overflow-y: auto; /* Приховує скролбар і обрізає зайвий контент */
+}
+
+.drone{
+    position: relative;
+    left: 410px;
+    height: 400px;
+    width: 700px;
+    bottom: 60px;
+    scale: 80%;
+}
+
+.container {
+    max-width: 1900px;
+    margin: 0 auto;
+    background: whitesmoke;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 0;
+
+}
+
+.components{
+   max-width: 400px;
+    height: 500px;
+    margin-left: 0px;
+    background: lightgrey;
+    border-radius: 8px;
+    margin-top: 157px;
+    padding: 50px;
+    text-align: left;
+    margin-bottom: 20px;   
+    bottom: 842px;
+    position: relative;
+}
+ul {
+   position: absolute; 
+   top: 100; 
+   left: 0; 
+   margin: 0;  
+   padding: 0; 
+}
+li {
+   margin-bottom: 20px; 
+   font-family: Arial;
+   font-size: 20px;
+}
+.api{
+    top: 480px;
+    position: relative;
+    
+}
+.discleimer{
+   font-size: 20px; /* Зменшує розмір тексту */
+    text-align: right; /* Вирівнює текст вправо */
+    position: relative;
+    top: 10px; /* Опускає вниз */
+    max-width: 500px; /* Обмежує максимальну ширину до 300px */
+    word-wrap: break-word; /* Переносить довгі слова */
+    white-space: normal; /* Дозволяє тексту переноситись на новий рядок */
+    left: 900px;
+}
+.courses{
+   font-size: 18px; /* Зменшує розмір тексту */
+    text-align: right; /* Вирівнює текст вправо */
+    position: relative;
+    top: 10px; /* Опускає вниз */
+    max-width: 300px; /* Обмежує максимальну ширину до 300px */
+    word-wrap: break-word; /* Переносить довгі слова */
+    white-space: normal; /* Дозволяє тексту переноситись на новий рядок */
+    left: 1100px;
+}

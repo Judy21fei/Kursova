@@ -1,0 +1,3 @@
+{"question1":"Юліана","question2":"18","question3":"green"}
+{"question1":"Олена","question2":"13","question3":"red"}
+{"question1":"","question2":"","question3":"red"}
