@@ -47,7 +47,7 @@ app.get('/testing', (req, res) => {
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'KJ304rRioJuli',
+    password: '***',
     database: 'drone_test'
 });
 
